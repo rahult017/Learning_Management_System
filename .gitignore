@@ -1,0 +1,13 @@
+# .gitignore
+
+# Ignore JetBrains IDE settings
+.idea/
+
+# Ignore Python compiled files
+__pycache__/
+
+# Ignore virtual environment
+venv/
+
+db.sqlite3
+.env
