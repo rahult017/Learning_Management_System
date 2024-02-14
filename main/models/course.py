@@ -14,6 +14,7 @@ class Course(models.Model):
     description = models.TextField()
     level = models.CharField(max_length=30,choices=CHOICES,default="Beginner")
     course_fee = models.IntegerField(default=0)
+    image = models.ImageField(upload_to='course_images/', blank=True, null=True)
     categories = models.ForeignKey(CourseCategories,on_delete=models.CASCADE)
     teacher = models.ForeignKey(Teacher,on_delete=models.CASCADE)
 

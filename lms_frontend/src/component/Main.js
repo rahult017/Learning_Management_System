@@ -14,6 +14,7 @@ import RecommendedCourseScreen from "./User/RecommendCourse";
 import ProfileSettingScreen from "./User/ProfileSetting";
 import ChangePasswordScreen from "./User/ChangePassword";
 import CourseScreen from "./Course";
+import TeacherScreen from "./Teacher";
 
 
 function MainScreen() {
@@ -32,6 +33,7 @@ function MainScreen() {
           <Route path="/my-courses/" element={ <MyCourseScreen/> } />
           <Route path="/favourite-courses/" element={ <FavouriteCourseScreen/> } />
           <Route path="/recommended-courses/" element={ <RecommendedCourseScreen/> } />
+          <Route path="/teacher/" element={ <TeacherScreen/> }/>
           <Route path="/profile-settings/" element={ <ProfileSettingScreen/> } />
           <Route path="/change-password/" element={ <ChangePasswordScreen/> } />
         </Routes>

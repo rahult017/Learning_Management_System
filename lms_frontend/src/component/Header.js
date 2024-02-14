@@ -18,7 +18,7 @@ function HeaderScreen() {
           <Link className="nav-link" to="/course/">Courses</Link>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">Teacher</a>
+          <Link className="nav-link" to="/teacher/">Teacher</Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link" to="/about/">About Us</Link>
