@@ -1,25 +1,43 @@
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useParams } from 'react-router-dom';
+import FetchDataComponent from "./FetchData";
 
 function CourseDetailScreen() {
-  let { course_id } = useParams();
+  const { id } = useParams();
 
   return (
     <div className="container" style={{ marginTop: '70px' }}>
         <div className="row">
-            <div className="col-4">
-                <img src="/logo512.png" className="card-img-top" alt="..."/>
-            </div>
-            <div className="col-8">
-                <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">This is a wider card with supporting text below as a 
-                    natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p className="fw-bold">Course By: <Link to="#">Teacher</Link></p>
-                    <p className="fw-bold">Duration: 3 hours 30 minutes</p>
-                    <p className="fw-bold">Total Enrollment: 456 Students </p>
-                    <p className="fw-bold">Rating: 4.5/5</p>
-                </div>
-            </div>
+        <FetchDataComponent url={`http://localhost:8000/course/${id}/`}
+            render={(course) => {
+              try {
+                return (
+                  <div className="row">
+                    <div className="col-4">
+                      <img src="/logo512.png" className="card-img-top" alt={course.title}/>
+                    </div>
+                    <div className="col-8">
+                      <div className="card-body">
+                        <h5 className="card-title">{course.title}</h5>
+                        <p className="card-text">{course.description}</p>
+                        <p className="fw-bold">Course By: <Link to="#">Teacher</Link></p>
+                        <p className="fw-bold">Level : {course.level}</p>
+                        <p className="fw-bold">Duration: 3 hours 30 minutes</p>
+                        <p className="fw-bold">Total Enrollment: 456 Students </p>
+                        <p className="fw-bold">Rating: 4.5/5</p>
+                        <p className="fw-bold">Fee: {course.course_fee} Rs</p>
+                      </div>
+                    </div>
+                  </div>
+                )
+              } catch (error) {
+                console.error("Error rendering data:", error);
+                return <div>Error rendering data</div>;
+              }
+
+            }}
+        />
+            
         </div>
         {/* Course Videos*/}
         <div className="card mt-4">

@@ -1,5 +1,6 @@
 import React from 'react';
 import FetchDataComponent from './FetchData';
+import { Link } from 'react-router-dom';
 
 function CourseScreen(){
     return (
@@ -12,9 +13,11 @@ function CourseScreen(){
                             return data.map(course => (
                                 <div className="col-md-3" key={course.id}>
                                     <div className="card">
-                                        <img src={course.image} className="card-img-top" alt={course.title} />
+                                        <Link to={`/detail/${course.id}/`}>
+                                            <img src={course.image} className="card-img-top" alt={course.title} />
+                                        </Link>
                                         <div className="card-body">
-                                            <h5 className="card-title">{course.title}</h5>
+                                            <Link to={`/detail/${course.id}/`}><h5 className="card-title">{course.title}</h5></Link>
                                             <p className="card-text">{course.description}</p>
                                         </div>
                                     </div>

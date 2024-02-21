@@ -24,7 +24,7 @@ function MainScreen() {
         <Routes>
           <Route path="/" element={ <HomeScreen/> }/>
           <Route path="/about/" element={ <AboutScreen/> }/>
-          <Route path="/detail/:course_id/" element={ <CourseDetailScreen/> }/>
+          <Route path="/detail/:id/" element={ <CourseDetailScreen/> }/>
           <Route path="/dashboard/" element={ <DashboardScreen/> }/>
           <Route path="/login/" element={ <LoginScreen/> }/>
           <Route path="/logout/" element={ <LogoutScreen/> }/>
